@@ -128,7 +128,7 @@ Correlation between average days-between-maintenance and incident count across a
 - **Total maintenance cost scales almost exactly 2× with engine count** ($87,555/vessel for single-engine vessels vs. $167,185/vessel for dual-engine vessels), while cost *per job* is statistically flat regardless of configuration — the total scales with volume of work, not price per job.
 - **Electrical Fault is the rarest incident type (60 of 459) but has the highest severity rate (23.3% severe)** — infrequent but disproportionately dangerous when it occurs, versus Engine Shutdown, which is more common and more often minor.
 
-## Honest Limitations
+## Limitations
 
 - **No explicit link between an incident and the maintenance event that resolved it.** The schema has no foreign key connecting them. Both date-proximity and incident-type/maintenance-type matching were tested as possible inference methods and neither produced a reliable signal — reported here as a tested-and-rejected hypothesis, not silently dropped. A production schema would add a `resolved_by_maintenance_id` column to close this gap.
 - **Maintenance records only begin in 2022, while engines were installed as early as 1998.** Any "lifetime cost" or "age vs. reliability" question is only valid within the observed 2022–2025 window, not across an engine's full service life — treated throughout as a digitization cutoff (a plausible real-world "the tracking system went live in 2022" scenario) rather than missing data to patch over.
