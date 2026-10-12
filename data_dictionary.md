@@ -88,12 +88,3 @@ Routine sensor/inspection readings taken on engines (independent of incidents).
 | temperature_c | DECIMAL | Engine temperature (°C) |
 | inspector_id | INT (FK) | References crew.technician_id |
 | result | VARCHAR | Pass / Fail |
-
-## Known Data Quality Notes
-This dataset intentionally includes realistic imperfections you'll want to handle before analysis:
-- A small number of duplicate rows in `maintenance_logs`
-- Inconsistent text casing in `home_port` and `vendor` fields
-- A handful of missing values in `cost` and `oil_pressure_bar`
-
-## A Note on Findings
-This dataset has several non-obvious patterns planted in it on purpose — some visible with basic aggregation, others requiring window functions or multi-table joins to surface. They are not documented here. Query your way to them.
